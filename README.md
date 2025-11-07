@@ -1,4 +1,4 @@
-#lets_share
+<h1>lets_share</h1>
 
 <h2>Description</h2>
 <p>This project is a simple peer-to-peer file sharing system built entirely in C++ using TCP sockets.
