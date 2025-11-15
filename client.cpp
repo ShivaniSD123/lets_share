@@ -72,6 +72,9 @@ int send_handler(int fd, std::vector<char> &file, const std::string &filename)
 int main()
 {
 
+    std::cout << "Enter the IP Adddress ";
+    std::string ip;
+    std::getline(std::cin, ip);
     // obtaining socket handler
     int fd = socket(AF_INET, SOCK_STREAM, 0);
     std::cout << "Socket created" << std::endl;
@@ -82,8 +85,9 @@ int main()
     std::cout << "Conntcted" << std::endl;
     struct sockaddr_in addr = {};
     addr.sin_family = AF_INET;
-    addr.sin_addr.s_addr = inet_addr("192.168.0.100");
+    addr.sin_addr.s_addr = inet_addr(ip.c_str());
     addr.sin_port = htons(1234);
+    std::cout << "File Path-" << std::endl;
     std::string filepath;
     std::getline(std::cin, filepath);
     std::string filename = fs::path(filepath).filename().string();
